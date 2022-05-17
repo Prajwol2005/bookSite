@@ -1,27 +1,27 @@
 /*
-This is your site JavaScript code - you can add interactivity and carry out processing
-- Initially the JS writes a message to the console, and moves a button you can add from the README
-*/
+$(".search-button").click(function () {
+  let userInput = $("input").val();
+  console.log(userInput);
 
-// Print a message in the browser's dev tools console each time the page loads
-// Use your menus or right-click / control-click and choose "Inspect" > "Console"
-console.log("Hello 🌎");
+  let gify = `https://api.giphy.com/v1/gifs/search?q=${userInput}&rating=pg&api_key=tTVMCPwEb1NapUWHla1pBNt4jKlfEqo1`;
+  fetch(gify)
+    .then(function (response) {
+      return response.json();
+    })
 
-/* 
-Make the "Click me!" button move when the visitor clicks it:
-- First add the button to the page by following the "Next steps" in the README
-*/
-const btn = document.querySelector("button"); // Get the button from the page
-// Detect clicks on the button
-if (btn) {
-  btn.onclick = function() {
-    // The JS works in conjunction with the 'dipped' code in style.css
-    btn.classList.toggle("dipped");
-  };
-}
-
-// This is a single line JS comment
-/*
-This is a comment that can span multiple lines 
-- use comments to make your own notes!
+    .then(function (data) {
+      console.log(data);
+      //var url = (data["data"][0]["embed_url"]);
+      //var url = "https://media4.giphy.com/media/njtPBlbYnHAHK/giphy-downsiz"
+    $(".grid").empty()
+      Array(9)
+        .fill()
+        .forEach((_) => {
+          var rando = Math.floor(Math.random() * data.data.length);
+          var url = data["data"][rando]["images"]["fixed_height"]["url"];
+          $(".grid").append(`<img class="gif" crossorigin="anonymous" src=${url}/>`);
+          return;
+        });
+    });
+});
 */
