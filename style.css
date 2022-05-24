@@ -4,76 +4,88 @@
 /*.HednNav {}*/
 
 .hed {
-    text-align: center;
-    font-size: 45px;
-    padding: 10px;
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-bottom: 0px;
-    color: #3D6F8A;
+  text-align: center;
+  font-size: 45px;
+  padding: 10px;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 0px;
+  color: #3d6f8a;
 }
 
 .navBar {
-    display: flex;
-    justify-content: space-around;
-    /*background-color: #EDF0F5;*/
-    margin-top: 0px;
+  display: flex;
+  justify-content: space-around;
+  /*background-color: #EDF0F5;*/
+  margin-top: 0px;
 }
 
 .items {
-    color: #003355;
-    font-size: 20px;
-    border: inset black 4px;
-    padding-right: 25px;
-    padding-left: 25px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: white;
-    text-decoration: none;
+  color: #003355;
+  font-size: 20px;
+  border: inset black 4px;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: white;
+  text-decoration: none;
 }
 
 /*Nav Bar End*/
 /*Full Body style*/
 body {
-    text-align: center;
-    font-family: 'Raleway', sans-serif;
-    font-size: 20px;
-    background-color: white;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  background-color: white;
 }
 /*Full Body styles end*/
+.bigContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.maincontent {
+  background-color: white;
+  justify-content: flex-start;
+  align-content: stretch;
+  padding: 10%;
+}
+
+.asideContent {
+  justify-content: flex-end;
+  align-items: stretch;
+
+  background-color: white;
+  border: solid;
+  border-color: black;
+  width: 200px;
+  padding: 10%;
+}
 
 /*Main Content Styles Start*/
-.maincontent {
-  margin:20%;
-  
-}
+
 /*Main Content Styles End*/
+
+/*Aside Content Styles Start*/
+
+/*Aside Content Styles End*/
+
 /*Text and image styles*/
 .andriod {
-    color: #a4c639;
-
+  color: #a4c639;
 }
 
 img {
-    width: 200px;
-    margin-left: 25px;
-    margin-right: 25px;
-
+  width: 200px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 /*Image and text styles end*/
-
-
-
-
-
-
-
-
-
-
-
 
 /*Don't delete randomly*/
 /* body {
@@ -112,4 +124,4 @@ img {
 .gif:hover{
   transform:scale(1.5);
 }
-*/      
+*/

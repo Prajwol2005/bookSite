@@ -1,19 +1,27 @@
-/*
-$(".search-button").click(function () {
-  let userInput = $("input").val();
-  console.log(userInput);
-
-  let gify = `https://api.giphy.com/v1/gifs/search?q=${userInput}&rating=pg&api_key=tTVMCPwEb1NapUWHla1pBNt4jKlfEqo1`;
-  fetch(gify)
+$(".randomBookGenerator").click(function () {
+  /*let userInput = $("input").val();
+  console.log(userInput);*/
+  let randomBooks = `https://www.googleapis.com/books/v1/volumes?q=harry%20potter`;
+  fetch(randomBooks)
     .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      let randomNum = Math.floor(Math.random() * 3);
+
+      /* let randomBooks = `https://www.googleapis.com/books/v1/volumes?q=harry%20potter`;
+  fetch(randomBooks)
+    .then(function (response) {
+      console.log(response);
       return response.json();
     })
 
     .then(function (data) {
-      console.log(data);
+      console.log(data); 
       //var url = (data["data"][0]["embed_url"]);
       //var url = "https://media4.giphy.com/media/njtPBlbYnHAHK/giphy-downsiz"
-    $(".grid").empty()
+      /* $(".grid").empty()
       Array(9)
         .fill()
         .forEach((_) => {
@@ -21,7 +29,6 @@ $(".search-button").click(function () {
           var url = data["data"][rando]["images"]["fixed_height"]["url"];
           $(".grid").append(`<img class="gif" crossorigin="anonymous" src=${url}/>`);
           return;
-        });
+        }); */
     });
 });
-*/
