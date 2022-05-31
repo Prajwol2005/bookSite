@@ -1,34 +1,46 @@
+/*let userin
+let randomBooks = "https://www.googleapis.com/books/v1/volumes?q="
+
+
 $(".randomBookGenerator").click(function () {
-  /*let userInput = $("input").val();
-  console.log(userInput);*/
-  let randomBooks = `https://www.googleapis.com/books/v1/volumes?q=harry%20potter`;
   fetch(randomBooks)
     .then(function (response) {
       return response.json();
     })
-    .then(function (data) {
-      console.log(data);
-      let randomNum = Math.floor(Math.random() * 3);
+    .then(function (json) {
+    let x = json.
+    });
+});
+*/
 
-      /* let randomBooks = `https://www.googleapis.com/books/v1/volumes?q=harry%20potter`;
-  fetch(randomBooks)
+$(".randomBookGenerator").click(function () {
+  let userInput = $(".searchTerm").val();
+  console.log(userInput);
+
+  let randomBook = `https://www.googleapis.com/books/v1/volumes?q=${userInput}`; /*&rating=pg&api_key=tTVMCPwEb1NapUWHla1pBNt4jKlfEqo1*/
+  fetch(randomBook)
     .then(function (response) {
-      console.log(response);
       return response.json();
     })
 
-    .then(function (data) {
-      console.log(data); 
+    .then(function (randomBookInfo) {
+      console.log(randomBookInfo);
       //var url = (data["data"][0]["embed_url"]);
       //var url = "https://media4.giphy.com/media/njtPBlbYnHAHK/giphy-downsiz"
-      /* $(".grid").empty()
-      Array(9)
-        .fill()
-        .forEach((_) => {
-          var rando = Math.floor(Math.random() * data.data.length);
-          var url = data["data"][rando]["images"]["fixed_height"]["url"];
-          $(".grid").append(`<img class="gif" crossorigin="anonymous" src=${url}/>`);
-          return;
-        }); */
+      var rando = Math.floor(Math.random() * randomBookInfo["items"].length);
+      var randomInfo = randomBookInfo["items"][rando]["volumeInfo"];
+      var title = randomInfo.title;
+      var authors = randomInfo.authors;
+      var publisher = randomInfo.publisher;
+      var publishedDate = randomInfo.publishedDate;
+      var smallThumbnail = randomInfo.imageLinks.smallThumbnail;
+      console.log(randomInfo);
+      $(".thumbnail").append(
+        `<img class="gif" crossorigin="anonymous" src=${smallThumbnail}/>`
+      );
+      $(".bigInfo").append(
+        `<p class="E">Title: ${title} <br> Author:${authors} <br> publisher: ${publisher} <br> Published Date: ${publishedDate} <br > </p>`
+      );
+      return;
     });
 });

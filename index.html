@@ -15,7 +15,12 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap"
       rel="stylesheet"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <!-- Important Links-->
 
+  <body>
     <!--Heading and Nav Start-->
     <div class="HednNav">
       <h1 class="hed">Book Review</h1>
@@ -32,10 +37,7 @@
       </div>
     </div>
     <!-- Heading and Nav End-->
-  </head>
-  <!-- Important Links-->
 
-  <body>
     <div class="bigContainer">
       <!-- Main Content: Book Reviews-->
       <div class="maincontent">
@@ -71,10 +73,25 @@
       <!-- Main Content End-->
       <!-- Aside Content-->
       <div class="asideContent">
-        <button type="button" class="randomBookGenerator">Click Me!</button>
-        <ul>
-          <li>Eeeeeeeeeeeeeeeeee</li>
-        </ul>
+        <h3 class="display">Search For Random Books Here</h3>
+        <input class="searchTerm" placeholder="Search" />
+        <button class="randomBookGenerator">Search</button>
+
+        <!-- Have your book appear below -->
+        <div class="generatedBooks">
+          <div class="thumbnail"></div>
+          
+          
+          <div class="bigInfo"></div>
+          
+          
+          <div class="title"></div>
+          <div class="authors"></div>
+          <div class="publisher"></div>
+          <div class="publisedDate"></div>
+          
+          
+        </div>
       </div>
       <!--Aside Content End-->
     </div>
